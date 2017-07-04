@@ -46,3 +46,31 @@ exports.setUser = functions.https.onRequest((req, res) => {
 });
 
 
+/**
+ * ユーザ作成後に呼ばれる関数
+ * FirebaseAuth trigger
+ */
+exports.authAndAddUser = functions.auth.user().onCreate(event => {
+
+  const userAuthData = event;
+  const defaultUserImage = "some user image url";
+  // 追加するユーザの定義
+  const user = {
+    [userAuthData.data.uid] : {
+      "name": "user name",
+      "introduction": "",
+      "profile_image_path": defaultUserImage,
+    }
+  };
+
+  admin.database().ref('/users').set(user).then(() => {
+    res.send(user);
+  });
+});
+
+
+
+
+
+
+
