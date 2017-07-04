@@ -11,7 +11,7 @@
 
 ### Create cloud function project.
 
-`firebase init function`
+`firebase init functions`
 
 ### Edit index.js
 
