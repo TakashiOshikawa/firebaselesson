@@ -32,5 +32,5 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 
 ### Access
 
-https://<yourregionandprojectid>.cloudfunctions.net/<functionname>
+https://\<yourregionandprojectid\>.cloudfunctions.net/\<functionname\>
 
