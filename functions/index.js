@@ -30,6 +30,7 @@ exports.addUser = functions.https.onRequest((req, res) => {
 
 // firebase authで取得したuidでのユーザ追加/更新
 // authentication_id_1を外部から渡された時に本人確認をどう行うか
+// 追加時の結果はrealtimedatabase.pngで確認可能
 exports.setUser = functions.https.onRequest((req, res) => {
   const user = {
     "authentication_id_1" : {
